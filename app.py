@@ -16,11 +16,13 @@ def Ai():
         with open(f"{topic}.txt", "w") as f:
             f.write(response.text)
 
-        return render_template('AI.html')
+        f_url = url_for('show', topic=topic)
+
+        return render_template('AI.html', f_url= f_url)
     else:
         return render_template("index.html")
     
-@app.route('/show/<topic>', methods=['GET','POST'])
+@app.route('/show/<topic>')
 def show(topic):
     return send_from_directory('/Users/macbookair/Desktop/python/Sem7 Proj', topic)
 
