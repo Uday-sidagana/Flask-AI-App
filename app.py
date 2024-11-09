@@ -1,5 +1,11 @@
 from flask import Flask, request, url_for, render_template, send_from_directory
 import google.generativeai as genai
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
+my_api_key = os.getenv("GOOGLE_GEMINI_API")
 
 app= Flask(__name__, template_folder="template")
 
@@ -9,7 +15,7 @@ def Ai():
 
         topic = request.form.get('AI')
 
-        genai.configure(api_key="AIzaSyBS5RV0CpZVd-m848t-1R7-6_zb9uPFV6o")
+        genai.configure(api_key=my_api_key)
         model = genai.GenerativeModel("gemini-1.5-flash")
         response = model.generate_content(topic)
         print(response.text)
