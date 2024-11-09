@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for, render_template
+from flask import Flask, request, url_for, render_template, send_from_directory
 import google.generativeai as genai
 
 app= Flask(__name__, template_folder="template")
@@ -13,12 +13,16 @@ def Ai():
         model = genai.GenerativeModel("gemini-1.5-flash")
         response = model.generate_content(topic)
         print(response.text)
-        with open(f"{topic}.md", "w") as f:
+        with open(f"{topic}.txt", "w") as f:
             f.write(response.text)
 
         return render_template('AI.html')
     else:
         return render_template("index.html")
+    
+@app.route('/show/<topic>', methods=['GET','POST'])
+def show(topic):
+    return send_from_directory('/Users/macbookair/Desktop/python/Sem7 Proj', topic)
 
 if __name__=="__main__":
     app.run(host="0.0.0.0", port=7001, debug=True)
