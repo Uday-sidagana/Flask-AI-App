@@ -9,12 +9,14 @@ def Ai():
 
         topic = request.form.get('AI')
 
-        genai.configure(api_key="YOUR_API_KEY")
+        genai.configure(api_key="AIzaSyBS5RV0CpZVd-m848t-1R7-6_zb9uPFV6o")
         model = genai.GenerativeModel("gemini-1.5-flash")
-        response = model.generate_content("Explain how AI works")
+        response = model.generate_content(topic)
         print(response.text)
+        with open(f"{topic}.md", "w") as f:
+            f.write(response.text)
 
-        return f"{topic}"
+        return render_template('AI.html')
     else:
         return render_template("index.html")
 
