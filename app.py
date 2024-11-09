@@ -1,4 +1,5 @@
 from flask import Flask, request, url_for, render_template
+import google.generativeai as genai
 
 app= Flask(__name__, template_folder="template")
 
@@ -7,6 +8,12 @@ def Ai():
     if request.method == 'POST':
 
         topic = request.form.get('AI')
+
+        genai.configure(api_key="YOUR_API_KEY")
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        response = model.generate_content("Explain how AI works")
+        print(response.text)
+
         return f"{topic}"
     else:
         return render_template("index.html")
