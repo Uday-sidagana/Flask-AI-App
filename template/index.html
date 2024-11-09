@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern User Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for graphs -->
+</head>
+<body>
+
+  <!-- Dashboard Container -->
+  <div class="dashboard">
+
+    <!-- Profile Section -->
+    <div class="profile">
+      <img src="{{ url_for('static', filename='profile.jpeg') }}" alt="Profile Picture"> 
+      <h2 id="username">Welcome John Doe of Chandigarh University</h2>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats">
+      <div class="stat-box">
+        <h3>22</h3>
+        <p>Completed Lessons</p>
+      </div>
+      <div class="stat-box">
+        <h3>3</h3>
+        <p>Ongoing Courses</p>
+      </div>
+      <div class="stat-box">
+        <h3>82%</h3>
+        <p>Average Score</p>
+      </div>
+    </div>
+
+    <!-- Graph Section -->
+    <div class="graph-section">
+      <h3>Your Progress</h3>
+      <canvas id="progressChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Recent Activity Section -->
+    <div class="recent-activity">
+      <h3>Recent Activity</h3>
+      <ul id="recent-activity-list">
+        <li>Completed Lesson 3: Javascript Fundamentals</li>
+        <li>Scored 95% on Quiz: HTML Basics</li>
+        <li>Enrolled in Course: Web Development 101</li>
+      </ul>
+    </div>
+
+
+    
+    <!-- -------------------------------- -->
+    <!-- New Section for Writing (without download functionality) -->
+    <div class="write-and-download">
+      <h3>Your AI Agent is at your Service Sir...</h3>
+      <form method="POST" action="{{ url_for('Ai') }}" enctype="multipart/form-data">
+        <input type="text" name="AI" placeholder="Topic:">
+        <input type="submit" value="GO!">
+      </form>
+    </div>
+
+    <!-- --------------------------------- -->
+
+
+
+    <!-- Study Materials Section -->
+    <div class="study-materials">
+      <h3>Study Materials</h3>
+      <div class="card-container" id="card-container">
+        <!-- Existing Cards -->
+        <div class="card">
+          <img src="{{ url_for('static', filename='html_image.jpeg') }}" alt="HTML Study Material" class="study-image">
+          <a href="#">HTML Basics</a>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='css_image.jpeg') }}" alt="CSS Study Material" class="study-image">
+          <a href="#">CSS Styling</a>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='js_image.jpeg') }}" alt="JavaScript Study Material" class="study-image">
+          <a href="#">JavaScript Fundamentals</a>
+        </div>
+      </div>
+
+      <!-- Input for New Study Material -->
+      <input type="text" id="new-material" placeholder="New Study Material Title">
+      <input type="file" id="image-upload" accept="image/*"> <!-- Image upload input -->
+      <button id="add-material-btn">Add Material</button>
+    </div>
+
+    <!-- Call-to-Action Button -->
+    <div class="cta">
+      <button class="cta-button">Start New Lesson</button>
+    </div>
+
+  </div>
+
+  <!-- External Scripts -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="{{ url_for('static', filename='chart.js') }}"></script> <!-- Linking new chart.js -->
+
+</body>
+</html>
