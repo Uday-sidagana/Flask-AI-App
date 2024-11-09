@@ -50,12 +50,10 @@
       </ul>
     </div>
 
-    <!-- New Section for Writing and Downloading -->
+    <!-- New Section for Writing (without download functionality) -->
     <div class="write-and-download">
       <h3>Your AI Agent is at your Service Sir...</h3>
       <input type="text" id="user-input" placeholder="Topic:">
-      <button id="download-btn">Download</button>
-      <a id="file-link" href="new-blog-post.md" download style="display: none;">Download</a> <!-- Hidden link for the existing file -->
     </div>
 
     <!-- Study Materials Section -->
@@ -93,21 +91,6 @@
   <!-- External Scripts -->
   <script src="script.js"></script>
   <script src="chart.js"></script> <!-- Linking new chart.js -->
-
-  <script>
-    // Change button text to 'Download' when user types in input field and presses Enter
-    document.getElementById("user-input").addEventListener("keydown", function(event) {
-        if (event.key === "Enter") {
-            document.getElementById("download-btn").textContent = "Download";
-            document.getElementById("file-link").style.display = "inline"; // Show the download link
-        }
-    });
-
-    // Click event for the button to simulate click on the download link
-    document.getElementById("download-btn").addEventListener("click", function() {
-        document.getElementById("file-link").click(); // Simulate a click on the hidden link
-    });
-  </script>
 
 </body>
 </html>
