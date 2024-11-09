@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern User Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for graphs -->
+</head>
+<body>
+
+  <!-- Dashboard Container -->
+  <div class="dashboard">
+
+    <!-- Profile Section -->
+    <div class="profile">
+      <img src="profile.jpeg" alt="Profile Picture"> 
+      <h2 id="username">Welcome John Doe of Chandigarh University</h2>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats">
+      <div class="stat-box">
+        <h3>22</h3>
+        <p>Completed Lessons</p>
+      </div>
+      <div class="stat-box">
+        <h3>3</h3>
+        <p>Ongoing Courses</p>
+      </div>
+      <div class="stat-box">
+        <h3>82%</h3>
+        <p>Average Score</p>
+      </div>
+    </div>
+
+    <!-- Graph Section -->
+    <div class="graph-section">
+      <h3>Your Progress</h3>
+      <canvas id="progressChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Recent Activity Section -->
+    <div class="recent-activity">
+      <h3>Recent Activity</h3>
+      <ul id="recent-activity-list">
+        <li>Completed Lesson 3: Javascript Fundamentals</li>
+        <li>Scored 95% on Quiz: HTML Basics</li>
+        <li>Enrolled in Course: Web Development 101</li>
+      </ul>
+    </div>
+
+    <!-- New Section for Writing and Downloading -->
+    <div class="write-and-download">
+      <h3>Your AI Agent is at your Service Sir...</h3>
+      <input type="text" id="user-input" placeholder="Topic:">
+      <button id="download-btn">Download</button>
+      <a id="file-link" href="new-blog-post.md" download style="display: none;">Download</a> <!-- Hidden link for the existing file -->
+    </div>
+
+    <!-- Study Materials Section -->
+    <div class="study-materials">
+      <h3>Study Materials</h3>
+      <div class="card-container" id="card-container">
+        <!-- Existing Cards -->
+        <div class="card">
+          <img src="html_image.jpeg" alt="HTML Study Material" class="study-image">
+          <a href="#">HTML Basics</a>
+        </div>
+        <div class="card">
+          <img src="css_image.jpeg" alt="CSS Study Material" class="study-image">
+          <a href="#">CSS Styling</a>
+        </div>
+        <div class="card">
+          <img src="js_image.jpeg" alt="JavaScript Study Material" class="study-image">
+          <a href="#">JavaScript Fundamentals</a>
+        </div>
+      </div>
+      
+      <!-- Input for New Study Material -->
+      <input type="text" id="new-material" placeholder="New Study Material Title">
+      <input type="file" id="image-upload" accept="image/*"> <!-- Image upload input -->
+      <button id="add-material-btn">Add Material</button>
+    </div>
+
+    <!-- Call-to-Action Button -->
+    <div class="cta">
+      <button class="cta-button">Start New Lesson</button>
+    </div>
+
+  </div>
+
+  <!-- External Scripts -->
+  <script src="script.js"></script>
+  <script src="chart.js"></script> <!-- Linking new chart.js -->
+
+  <script>
+    // Change button text to 'Download' when user types in input field and presses Enter
+    document.getElementById("user-input").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            document.getElementById("download-btn").textContent = "Download";
+            document.getElementById("file-link").style.display = "inline"; // Show the download link
+        }
+    });
+
+    // Click event for the button to simulate click on the download link
+    document.getElementById("download-btn").addEventListener("click", function() {
+        document.getElementById("file-link").click(); // Simulate a click on the hidden link
+    });
+  </script>
+
+</body>
+</html>

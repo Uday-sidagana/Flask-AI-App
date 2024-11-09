@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Study Material</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Add New Study Material</h1>
+  </header>
+
+  <main>
+    <div class="add-material-container">
+      <input type="text" id="new-material-title" placeholder="Material Title">
+      <input type="file" id="new-image-upload" accept="image/*"> <!-- Image upload input -->
+      <button id="add-material-submit-btn">Submit</button>
+    </div>
+
+    <div id="message" class="message"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Study Materials. All rights reserved.</p>
+  </footer>
+
+  <script src="add_material.js"></script> <!-- Link to JavaScript for handling the submission -->
+</body>
+</html>

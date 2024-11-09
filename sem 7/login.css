@@ -1,0 +1,84 @@
+/* Make sure the logo is centered and at the top */
+.logo-container {
+    position: absolute;
+    top: 20px; /* Adjust this value if you want more space from the top */
+    width: 100%; /* Take full width to center the logo */
+    text-align: center; /* Center the text horizontally */
+}
+
+.app-logo {
+    font-family: 'Pacifico', cursive; /* Fancy script font */
+    font-size: 3rem; /* Adjust size as needed */
+    background: linear-gradient(135deg, #3498db, #8e44ad); /* Gradient effect */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Makes gradient text */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    margin: 0;
+}
+
+/* Optional: Add a Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* Rest of the login container styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Input styles remain unchanged */
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Submit button styling */
+.cta-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
