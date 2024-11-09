@@ -4,10 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Healthcare</title>
+  <style>
+    /* Basic Styling for the Body */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+    }
+
+    /* Main container for content */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Styling for the download link */
+    .download-btn {
+      display: block;
+      width: 200px;
+      margin: 20px 0;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .download-btn:hover {
+      background-color: #45a049;
+    }
+
+    /* Section containing the iframe for viewing the text */
+    .iframe-container {
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      background-color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-<form action="{{url_for('Ai')}}"></form>
-<a href="{{f_url}}.txt" download="{{f_url}}.txt"></a>
-<iframe src="{{f_url}}.txt" width="1200" height="800" ></iframe>
+  <div class="container">
+    
+    <!-- Download Button (Appears on top) -->
+    <a href="{{f_url}}.txt" download="{{f_url}}.txt" class="download-btn"><b>Download Text File</b></a>
+    
+    <!-- Iframe Container to display text content -->
+    <div class="iframe-container">
+      <iframe src="{{f_url}}.txt" width="100%" height="800"></iframe>
+    </div>
+  </div>
 </body>
 </html>
