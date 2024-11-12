@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modern User Dashboard</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for graphs -->
 </head>
 <body>
 
@@ -28,16 +27,16 @@
         <h3>3</h3>
         <p>Ongoing Courses</p>
       </div>
-      <div class="stat-box">
-        <h3>82%</h3>
-        <p>Average Score</p>
-      </div>
     </div>
 
-    <!-- Graph Section -->
-    <div class="graph-section">
-      <h3>Your Progress</h3>
-      <canvas id="progressChart" width="400" height="200"></canvas>
+    <!-- Prominent AI Agent Section -->
+    <div class="ai-agent">
+      <h3>Your AI Agent is at Your Service</h3>
+      <p>Ask anything, and your AI Agent will assist you with the topic you need!</p>
+      <form method="POST" action="{{ url_for('Ai') }}" enctype="multipart/form-data">
+        <input type="text" name="AI" placeholder="Enter a topic you'd like to learn about...">
+        <input type="submit" value="GO!">
+      </form>
     </div>
 
     <!-- Recent Activity Section -->
@@ -49,22 +48,6 @@
         <li>Enrolled in Course: Web Development 101</li>
       </ul>
     </div>
-
-
-    
-    <!-- -------------------------------- -->
-    <!-- New Section for Writing (without download functionality) -->
-    <div class="write-and-download">
-      <h3>Your AI Agent is at your Service Sir...</h3>
-      <form method="POST" action="{{ url_for('Ai') }}" enctype="multipart/form-data">
-        <input type="text" name="AI" placeholder="Topic:">
-        <input type="submit" value="GO!">
-      </form>
-    </div>
-
-    <!-- --------------------------------- -->
-
-
 
     <!-- Study Materials Section -->
     <div class="study-materials">
@@ -100,7 +83,5 @@
 
   <!-- External Scripts -->
   <script src="{{ url_for('static', filename='script.js') }}"></script>
-  <script src="{{ url_for('static', filename='chart.js') }}"></script> <!-- Linking new chart.js -->
-
 </body>
 </html>
