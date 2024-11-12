@@ -1,13 +1,13 @@
 /* General Styles */
 * {
-  box-sizing: border-box; /* Ensures padding and border are included in the element's total width/height */
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #ecf0f1; /* Light, soft background for contrast */
+  background-color: #ecf0f1;
   margin: 0;
-  color: #2c3e50; /* Dark text for readability */
+  color: #2c3e50;
 }
 
 .dashboard {
@@ -17,8 +17,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  transition: transform 0.3s ease;
-  background-color: #fedff966; /* Adding white background for content clarity */
+  background-color: #fedff966;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -30,7 +29,6 @@ body {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
 }
 
 .profile img {
@@ -42,12 +40,7 @@ body {
 
 .profile h2 {
   font-size: 1.5em;
-  color: #04d7fc; /* Adding a bit of blue for prominence */
-}
-
-.profile:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  color: #04d7fc;
 }
 
 /* Stats Section */
@@ -59,13 +52,12 @@ body {
 
 .stat-box {
   flex: 1;
-  background-color: #f8f9fa; /* Soft background color for contrast */
+  background-color: #f8f9fa;
   text-align: center;
   padding: 20px;
   margin: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .stat-box h3 {
@@ -73,33 +65,14 @@ body {
   color: #2980b9;
 }
 
-.stat-box:hover {
-  transform: translateY(-5px);
-  background-color: #3498db; /* Adding hover effect for an interactive feel */
-  color: white;
-}
-
 /* AI Agent Section */
 .ai-agent {
-  background: linear-gradient(135deg, #3498db, #9b59b6); /* Rich gradient background */
+  background: linear-gradient(135deg, #3498db, #9b59b6);
   color: white;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.ai-agent h3 {
-  font-size: 2em;
-  color: #ecf0f1;
-  margin-bottom: 15px;
-}
-
-.ai-agent p {
-  font-size: 1.2em;
-  margin-bottom: 25px;
-  color: #d3d3d3;
 }
 
 .ai-agent form input[type="text"] {
@@ -109,7 +82,6 @@ body {
   border: none;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
 }
 
 .ai-agent form input[type="submit"] {
@@ -119,17 +91,10 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .ai-agent form input[type="submit"]:hover {
   background-color: #e67e22;
-  transform: scale(1.05); /* Slight animation on hover */
-}
-
-.ai-agent:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Added hover shadow for emphasis */
 }
 
 /* Recent Activity Section */
@@ -153,11 +118,6 @@ body {
   padding: 10px 0;
   border-bottom: 1px solid #eee;
   color: #555;
-  transition: background-color 0.3s ease;
-}
-
-.recent-activity li:hover {
-  background-color: #f4f6f7; /* Adding hover effect for list items */
 }
 
 /* Study Materials Section */
@@ -182,41 +142,21 @@ body {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.3s ease, transform 0.3s ease;
-}
-
-.card h4 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  background-color: #f0f8ff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Adding more emphasis on hover */
-}
-
-.card:active {
-  transform: scale(0.98);
 }
 
 .input-container {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 #new-material, #file-upload {
-  width: 100%; /* Ensure the inputs do not overflow the container */
+  width: 100%;
   padding: 12px;
   margin-bottom: 20px;
   border-radius: 8px;
   background-color: #f9fbfd;
   border: 1px solid #ccc;
-  transition: border 0.3s ease;
-  box-sizing: border-box; /* Include padding and border in the element's total width/height */
 }
 
 #new-material:focus, #file-upload:focus {
@@ -233,15 +173,11 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1.1em;
-  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #add-material-btn:hover {
   background-color: #e67e22;
-  transform: scale(1.05); /* Adding animation on hover */
 }
-
 
 /* Chat Icon */
 .chat-icon {
@@ -252,13 +188,11 @@ body {
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
-  z-index: 1000;
 }
 
 .chat-icon img {
   width: 40px;
   height: 40px;
-  object-fit: cover;
 }
 
 /* Chatbot Section */
@@ -272,77 +206,55 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  z-index: 999;
-  transition: transform 0.3s ease;
+  display: none;
 }
 
-.chatbot-logo {
-  width: 50px;
-  height: 50px;
+.chat-header {
   background-color: #3498db;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.chat-header button {
   position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.chatbot-logo img {
-  width: 25px;
-  height: 25px;
-  object-fit: cover;
-}
-
-.chatbot-window {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 300px;
-}
-
-.chatbot-header h4 {
-  font-size: 1.2em;
-  color: #2c3e50;
-  margin: 0;
-}
-
-.chatbot-body {
-  flex-grow: 1;
+.chat-messages {
+  padding: 10px;
   overflow-y: auto;
-  margin-top: 10px;
+  height: 350px;
 }
 
-.chatbot-message {
-  background-color: #f1f1f1;
+.chat-input {
   padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.chatbot input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
+.chat-input input[type="text"] {
+  width: 85%;
+  padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
 
-.chatbot button {
-  width: 100%;
-  padding: 10px;
+.chat-input button {
+  width: 10%;
   background-color: #3498db;
-  color: white;
   border: none;
-  border-radius: 5px;
+  color: white;
+  padding: 10px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
-.chatbot button:hover {
+.chat-input button:hover {
   background-color: #2980b9;
 }

@@ -68,3 +68,45 @@ chatIcon.addEventListener('click', () => {
   }
 });
 
+
+// Toggle the chatbot visibility
+function toggleChat() {
+  const chatbot = document.getElementById("chatbot");
+  chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+}
+
+// Send the user's message to the chatbot and display the response
+function sendMessage() {
+  const chatInput = document.getElementById("chat-input-field");
+  const chatMessages = document.getElementById("chat-messages");
+
+  if (chatInput.value.trim() === "") return;
+
+  // Display the user's message
+  const userMessage = document.createElement("div");
+  userMessage.className = "user-message";
+  userMessage.textContent = chatInput.value;
+  chatMessages.appendChild(userMessage);
+
+  // Send the message to the server via AJAX
+  fetch("/chatbot", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: new URLSearchParams({ chat_text: chatInput.value })
+  })
+  .then(response => response.json())
+  .then(data => {
+      const botMessage = document.createElement("div");
+      botMessage.className = "bot-message";
+      botMessage.textContent = data.response || data.error;
+      chatMessages.appendChild(botMessage);
+      chatMessages.scrollTop = chatMessages.scrollHeight;  // Auto-scroll to the latest message
+  })
+  .catch(error => {
+      console.error("Error:", error);
+  });
+
+  chatInput.value = "";  // Clear input field
+}
