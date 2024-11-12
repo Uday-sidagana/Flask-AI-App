@@ -1,7 +1,7 @@
 /* General Styles */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f7fa;
+  background-color: #f0f4f8;
   margin: 0;
   color: #333;
 }
@@ -21,7 +21,8 @@ body {
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
 }
 
 .profile img {
@@ -33,7 +34,11 @@ body {
 
 .profile h2 {
   font-size: 1.5em;
-  color: #2980b9;
+  color: #2c3e50;
+}
+
+.profile:hover {
+  transform: translateY(-5px);
 }
 
 /* Stats Section */
@@ -44,48 +49,72 @@ body {
 
 .stat-box {
   flex: 1;
-  background-color: #eaf6ff;
+  background-color: #eef6fc;
   text-align: center;
   padding: 20px;
   margin: 10px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .stat-box h3 {
   font-size: 2em;
-  color: #3498db;
+  color: #2980b9;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
 }
 
 /* AI Agent Section (Main Focus) */
 .ai-agent {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #3498db, #8e44ad);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .ai-agent h3 {
-  font-size: 1.8em;
-  color: #2980b9;
+  font-size: 2em;
+  color: #ecf0f1;
+  margin-bottom: 15px;
+}
+
+.ai-agent p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+  color: #d3d3d3;
 }
 
 .ai-agent form input[type="text"] {
   width: 70%;
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .ai-agent form input[type="submit"] {
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: #fff;
+  padding: 12px 25px;
+  background-color: #f39c12;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ai-agent form input[type="submit"]:hover {
+  background-color: #e67e22;
+}
+
+.ai-agent:hover {
+  transform: scale(1.02);
 }
 
 /* Recent Activity Section */
@@ -93,11 +122,11 @@ body {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .recent-activity h3 {
-  color: #2980b9;
+  color: #2c3e50;
 }
 
 .recent-activity ul {
@@ -108,6 +137,7 @@ body {
 .recent-activity li {
   padding: 10px 0;
   border-bottom: 1px solid #eee;
+  color: #555;
 }
 
 /* Study Materials Section */
@@ -115,19 +145,19 @@ body {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .study-materials h3 {
-  color: #2980b9;
+  color: #2c3e50;
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .card {
@@ -137,11 +167,12 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
@@ -166,10 +197,10 @@ body {
   color: white;
   padding: 15px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1.2em;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {

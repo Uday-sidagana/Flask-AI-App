@@ -31,8 +31,8 @@
 
     <!-- Prominent AI Agent Section -->
     <div class="ai-agent">
-      <h3>Your AI Agent is at Your Service</h3>
-      <p>Ask anything, and your AI Agent will assist you with the topic you need!</p>
+      <h3>Your AI Agent is Ready to Assist</h3>
+      <p>Ask anything, and your AI Agent will provide resources on the topic!</p>
       <form method="POST" action="{{ url_for('Ai') }}" enctype="multipart/form-data">
         <input type="text" name="AI" placeholder="Enter a topic you'd like to learn about...">
         <input type="submit" value="GO!">
@@ -43,7 +43,7 @@
     <div class="recent-activity">
       <h3>Recent Activity</h3>
       <ul id="recent-activity-list">
-        <li>Completed Lesson 3: Javascript Fundamentals</li>
+        <li>Completed Lesson 3: JavaScript Fundamentals</li>
         <li>Scored 95% on Quiz: HTML Basics</li>
         <li>Enrolled in Course: Web Development 101</li>
       </ul>
@@ -53,24 +53,12 @@
     <div class="study-materials">
       <h3>Study Materials</h3>
       <div class="card-container" id="card-container">
-        <!-- Existing Cards -->
-        <div class="card">
-          <img src="{{ url_for('static', filename='html_image.jpeg') }}" alt="HTML Study Material" class="study-image">
-          <a href="#">HTML Basics</a>
-        </div>
-        <div class="card">
-          <img src="{{ url_for('static', filename='css_image.jpeg') }}" alt="CSS Study Material" class="study-image">
-          <a href="#">CSS Styling</a>
-        </div>
-        <div class="card">
-          <img src="{{ url_for('static', filename='js_image.jpeg') }}" alt="JavaScript Study Material" class="study-image">
-          <a href="#">JavaScript Fundamentals</a>
-        </div>
+        <!-- Placeholder for dynamically added cards -->
       </div>
 
       <!-- Input for New Study Material -->
-      <input type="text" id="new-material" placeholder="New Study Material Title">
-      <input type="file" id="image-upload" accept="image/*"> <!-- Image upload input -->
+      <input type="text" id="new-material" placeholder="Enter Study Material Title">
+      <input type="file" id="file-upload" accept="application/pdf">
       <button id="add-material-btn">Add Material</button>
     </div>
 
