@@ -140,69 +140,89 @@ body {
   color: #555;
 }
 
-/* Study Materials Section */
-.study-materials {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.study-materials h3 {
-  color: #2c3e50;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.card {
-  width: 150px;
-  text-align: center;
-  background-color: #f9fbfd;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.card img {
+/* Title Input (for study material title) */
+#new-material {
   width: 100%;
-  border-radius: 5px;
-}
-
-.card a {
-  text-decoration: none;
-  color: #3498db;
-  display: block;
-  margin-top: 5px;
-}
-
-/* Call-to-Action Button */
-.cta {
-  text-align: center;
-}
-
-.cta-button {
-  background-color: #3498db;
-  color: white;
-  padding: 15px 30px;
-  border: none;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  color: #333;
+  background-color: #f9fbfd;
+  transition: border 0.3s ease;
+}
+
+#new-material:focus {
+  outline: none;
+  border: 1px solid #3498db;
+}
+
+/* Choose File Input */
+#image-upload {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.1em;
+  background-color: #f9fbfd;
+  color: #333;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
-  background-color: #2980b9;
+#image-upload:hover {
+  background-color: #eef6fc;
+}
+
+#image-upload:focus {
+  outline: none;
+  border: 1px solid #3498db;
+}
+
+/* Add Material Button */
+#add-material-btn {
+  background-color: #f39c12;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+}
+
+#add-material-btn:hover {
+  background-color: #e67e22;
+}
+
+#add-material-btn:focus {
+  outline: none;
+  border: 1px solid #e67e22;
+}
+
+/* Container for Inputs (to ensure layout and spacing) */
+.input-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .input-container {
+    padding: 20px;
+  }
+
+  #new-material, #image-upload, #add-material-btn {
+    font-size: 1em;
+  }
 }
