@@ -69,13 +69,27 @@ chatIcon.addEventListener('click', () => {
 });
 
 
-// Toggle the chatbot visibility
 function toggleChat() {
   const chatbot = document.getElementById("chatbot");
-  chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+  const icon = document.getElementById("chatbot-icon");
+
+  if (chatbot.style.display === "none" || chatbot.classList.contains("close-animation")) {
+      chatbot.classList.remove("close-animation");
+      chatbot.classList.add("open-animation");
+      icon.style.transform = "rotate(360deg)";
+      setTimeout(() => {
+          chatbot.style.display = "flex";
+      }, 400);
+  } else {
+      chatbot.classList.remove("open-animation");
+      chatbot.classList.add("close-animation");
+      icon.style.transform = "rotate(-360deg)";
+      setTimeout(() => {
+          chatbot.style.display = "none";
+      }, 400);
+  }
 }
 
-// Send the user's message to the chatbot and display the response
 function sendMessage() {
   const chatInput = document.getElementById("chat-input-field");
   const chatMessages = document.getElementById("chat-messages");

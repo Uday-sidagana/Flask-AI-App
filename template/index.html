@@ -61,21 +61,23 @@
   </div> <!-- End of Dashboard -->
 
   <!-- Chat Icon and Chatbot Interface -->
-  <div id="chat-icon" class="chat-icon">
-    <img src="{{ url_for('static', filename='chat-icon.png') }}" alt="Chat Icon" onclick="toggleChat()">
-  </div>
+  <!-- Chatbot Icon and Chatbox -->
+<div id="chatbot-icon" onclick="toggleChat()">
+  💬
+</div>
 
-  <div id="chatbot" class="chatbot">
-    <div class="chat-header">
-      <h3>AI Chatbot</h3>
+<div id="chatbot" class="chatbox">
+  <div class="chat-header">
+      <span>AI Chatbot</span>
       <button onclick="toggleChat()">✖</button>
-    </div>
-    <div id="chat-messages" class="chat-messages"></div>
-    <div class="chat-input">
-      <input type="text" id="chat-input-field" placeholder="Type a message..." autocomplete="off">
-      <button onclick="sendMessage()">Send</button>
-    </div>
   </div>
+  <div id="chat-messages" class="chat-messages"></div>
+  <div class="chat-input-container">
+      <input id="chat-input-field" type="text" placeholder="Type a message..." onkeypress="if(event.key === 'Enter') sendMessage()">
+      <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
 
   <!-- External Scripts -->
   <script src="{{ url_for('static', filename='script.js') }}"></script>
