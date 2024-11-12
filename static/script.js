@@ -5,12 +5,15 @@ const newMaterialInput = document.getElementById('new-material');
 const fileInput = document.getElementById('file-upload');
 const recentActivityList = document.getElementById('recent-activity-list');
 
-// Function to update the chart with a random score
-function updateChart(newData) {
-    // Assuming `progressChart` is already defined and initialized
-    progressChart.data.labels.push(`Week ${progressChart.data.labels.length + 1}`);
-    progressChart.data.datasets[0].data.push(newData);
-    progressChart.update();
+
+
+// Element for updating the "Ongoing Courses" count
+const ongoingCoursesCount = document.querySelector('.stats .stat-box:nth-child(2) h3');
+
+// Function to increment the "Ongoing Courses" count
+function incrementOngoingCourses() {
+    let count = parseInt(ongoingCoursesCount.textContent);
+    ongoingCoursesCount.textContent = ++count;
 }
 
 // Function to add a new study material card
