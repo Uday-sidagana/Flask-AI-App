@@ -1,9 +1,13 @@
 /* General Styles */
+* {
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width/height */
+}
+
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f0f4f8;
+  background-color: #ecf0f1; /* Light, soft background for contrast */
   margin: 0;
-  color: #333;
+  color: #2c3e50; /* Dark text for readability */
 }
 
 .dashboard {
@@ -14,15 +18,18 @@ body {
   grid-template-columns: 1fr;
   gap: 20px;
   transition: transform 0.3s ease;
+  background-color: #fedff966; /* Adding white background for content clarity */
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Profile Section */
 .profile {
   text-align: center;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -35,11 +42,12 @@ body {
 
 .profile h2 {
   font-size: 1.5em;
-  color: #2c3e50;
+  color: #04d7fc; /* Adding a bit of blue for prominence */
 }
 
 .profile:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 /* Stats Section */
@@ -51,13 +59,13 @@ body {
 
 .stat-box {
   flex: 1;
-  background-color: #eef6fc;
+  background-color: #f8f9fa; /* Soft background color for contrast */
   text-align: center;
   padding: 20px;
   margin: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .stat-box h3 {
@@ -67,17 +75,19 @@ body {
 
 .stat-box:hover {
   transform: translateY(-5px);
+  background-color: #3498db; /* Adding hover effect for an interactive feel */
+  color: white;
 }
 
 /* AI Agent Section */
 .ai-agent {
-  background: linear-gradient(135deg, #3498db, #8e44ad);
+  background: linear-gradient(135deg, #3498db, #9b59b6); /* Rich gradient background */
   color: white;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ai-agent h3 {
@@ -99,6 +109,7 @@ body {
   border: none;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
 .ai-agent form input[type="submit"] {
@@ -108,15 +119,17 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .ai-agent form input[type="submit"]:hover {
   background-color: #e67e22;
+  transform: scale(1.05); /* Slight animation on hover */
 }
 
 .ai-agent:hover {
   transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Added hover shadow for emphasis */
 }
 
 /* Recent Activity Section */
@@ -140,6 +153,11 @@ body {
   padding: 10px 0;
   border-bottom: 1px solid #eee;
   color: #555;
+  transition: background-color 0.3s ease;
+}
+
+.recent-activity li:hover {
+  background-color: #f4f6f7; /* Adding hover effect for list items */
 }
 
 /* Study Materials Section */
@@ -165,7 +183,7 @@ body {
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, transform 0.3s ease;
 }
 
 .card h4 {
@@ -176,6 +194,7 @@ body {
 .card:hover {
   transform: translateY(-5px);
   background-color: #f0f8ff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Adding more emphasis on hover */
 }
 
 .card:active {
@@ -190,12 +209,14 @@ body {
 }
 
 #new-material, #file-upload {
-  width: 100%;
+  width: 100%; /* Ensure the inputs do not overflow the container */
   padding: 12px;
   margin-bottom: 20px;
   border-radius: 8px;
   background-color: #f9fbfd;
   border: 1px solid #ccc;
+  transition: border 0.3s ease;
+  box-sizing: border-box; /* Include padding and border in the element's total width/height */
 }
 
 #new-material:focus, #file-upload:focus {
@@ -213,30 +234,10 @@ body {
   border-radius: 8px;
   cursor: pointer;
   font-size: 1.1em;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #add-material-btn:hover {
   background-color: #e67e22;
-}
-
-/* CTA Button */
-.cta {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.cta-button {
-  padding: 15px 30px;
-  font-size: 1.2em;
-  background-color: #2c3e50;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #34495e;
+  transform: scale(1.05); /* Adding animation on hover */
 }
