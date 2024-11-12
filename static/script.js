@@ -7,6 +7,7 @@ const recentActivityList = document.getElementById('recent-activity-list');
 
 // Function to update the chart with a random score
 function updateChart(newData) {
+    // Assuming `progressChart` is already defined and initialized
     progressChart.data.labels.push(`Week ${progressChart.data.labels.length + 1}`);
     progressChart.data.datasets[0].data.push(newData);
     progressChart.update();
@@ -23,8 +24,11 @@ function addStudyMaterial() {
         const newCard = document.createElement('div');
         newCard.className = 'card';
         newCard.innerHTML = `
-            <a href="${fileUrl}" target="_blank" class="study-link">${materialTitle}</a>
+            <h4>${materialTitle}</h4>
+            <a href="${fileUrl}" target="_blank" class="study-link">View Material</a>
         `;
+        newCard.onclick = () => window.open(fileUrl, '_blank');  // Make the entire card clickable
+
         cardContainer.appendChild(newCard);
 
         // Update Recent Activity Section

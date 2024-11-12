@@ -13,6 +13,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  transition: transform 0.3s ease;
 }
 
 /* Profile Section */
@@ -44,7 +45,8 @@ body {
 /* Stats Section */
 .stats {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .stat-box {
@@ -67,7 +69,7 @@ body {
   transform: translateY(-5px);
 }
 
-/* AI Agent Section (Main Focus) */
+/* AI Agent Section */
 .ai-agent {
   background: linear-gradient(135deg, #3498db, #8e44ad);
   color: white;
@@ -140,49 +142,70 @@ body {
   color: #555;
 }
 
-/* Title Input (for study material title) */
-#new-material {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1.1em;
-  color: #333;
-  background-color: #f9fbfd;
-  transition: border 0.3s ease;
+/* Study Materials Section */
+.study-materials {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-#new-material:focus {
-  outline: none;
-  border: 1px solid #3498db;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
 }
 
-/* Choose File Input */
-#image-upload {
+.card {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1.1em;
+  max-width: 300px;
   background-color: #f9fbfd;
-  color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-#image-upload:hover {
-  background-color: #eef6fc;
+.card h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
 
-#image-upload:focus {
+.card:hover {
+  transform: translateY(-5px);
+  background-color: #f0f8ff;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.input-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#new-material, #file-upload {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #f9fbfd;
+  border: 1px solid #ccc;
+}
+
+#new-material:focus, #file-upload:focus {
   outline: none;
   border: 1px solid #3498db;
 }
 
 /* Add Material Button */
 #add-material-btn {
+  width: 100%;
   background-color: #f39c12;
   color: white;
   padding: 12px 25px;
@@ -191,38 +214,29 @@ body {
   cursor: pointer;
   font-size: 1.1em;
   transition: background-color 0.3s ease;
-  margin-top: 20px;
-  width: 100%;
 }
 
 #add-material-btn:hover {
   background-color: #e67e22;
 }
 
-#add-material-btn:focus {
-  outline: none;
-  border: 1px solid #e67e22;
+/* CTA Button */
+.cta {
+  text-align: center;
+  margin-top: 30px;
 }
 
-/* Container for Inputs (to ensure layout and spacing) */
-.input-container {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .input-container {
-    padding: 20px;
-  }
-
-  #new-material, #image-upload, #add-material-btn {
-    font-size: 1em;
-  }
+.cta-button:hover {
+  background-color: #34495e;
 }
