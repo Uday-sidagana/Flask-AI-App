@@ -66,20 +66,28 @@
 
   </div> <!-- End of Dashboard -->
 
+
+  <!-- Chat Icon -->
+<div id="chat-icon" class="chat-icon">
+  <img src="{{ url_for('static', filename='chat-icon.png') }}" alt="Chat Icon">
+</div>
+
+
   <!-- Chatbot Section -->
-  <div class="chatbot">
-    
-    <div class="chatbot-window">
-      <div class="chatbot-header">
-        <h4>Chat with Us!</h4>
-      </div>
-      <div class="chatbot-body">
-        <div class="chatbot-message">Hello! How can I assist you today?</div>
-      </div>
-      <input type="text" placeholder="Type your message...">
-      <button>Send</button>
+<div id="chatbot" class="chatbot" style="display: none;">
+  
+  <div class="chatbot-window">
+    <div class="chatbot-header">
+      <h4>Chat with Us!</h4>
     </div>
+    <div class="chatbot-body">
+      <div class="chatbot-message">Hello! How can I assist you today?</div>
+    </div>
+    <input type="text" placeholder="Type your message...">
+    <button>Send</button>
   </div>
+</div>
+
 
   <!-- External Scripts -->
   <script src="{{ url_for('static', filename='script.js') }}"></script>
