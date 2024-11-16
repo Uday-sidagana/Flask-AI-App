@@ -1,5 +1,4 @@
 from flask import Flask, request, url_for, render_template, send_from_directory, jsonify
-import time
 import google.generativeai as genai
 from dotenv import load_dotenv
 import os
@@ -46,11 +45,9 @@ def chatbot():
 
             genai.configure(api_key=my_api_key)
             model = genai.GenerativeModel("gemini-1.5-flash")
-            start_time = time.time()
+            
             response = model.generate_content(user_input)
             chat_response = response.text
-            end_time = time.time()
-            print("Gemini API call duration:", end_time - start_time, "seconds")
 
             return jsonify({'response': chat_response})
 
