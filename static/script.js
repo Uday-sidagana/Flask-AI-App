@@ -1,50 +1,45 @@
-// Select elements for adding study materials
+// Selecting Elements
 const cardContainer = document.getElementById('card-container');
 const addMaterialBtn = document.getElementById('add-material-btn');
 const newMaterialInput = document.getElementById('new-material');
 const fileInput = document.getElementById('file-upload');
 const recentActivityList = document.getElementById('recent-activity-list');
-
-// Element for updating the "Ongoing Courses" count
 const ongoingCoursesCount = document.getElementById('ongoing-courses-count');
+const chatIcon = document.getElementById('chat-icon');
+const chatbot = document.getElementById('chatbot');
 
-// Function to increment the "Ongoing Courses" count
+// Increment "Ongoing Courses" Count
 function incrementOngoingCourses() {
     let count = parseInt(ongoingCoursesCount.textContent);
     ongoingCoursesCount.textContent = ++count;
 }
 
-// Function to add a new study material card
+// Add New Study Material Card
 function addStudyMaterial() {
     const materialTitle = newMaterialInput.value.trim();
     if (materialTitle && fileInput.files.length > 0) {
         const file = fileInput.files[0];
-        const fileUrl = URL.createObjectURL(file); // Generate a URL for the uploaded file
+        const fileUrl = URL.createObjectURL(file);
 
-        // Create a new card for the uploaded PDF
+        // Create and Append New Material Card
         const newCard = document.createElement('div');
         newCard.className = 'card';
         newCard.innerHTML = `
             <h4>${materialTitle}</h4>
             <a href="${fileUrl}" target="_blank" class="study-link">View Material</a>
         `;
-        newCard.onclick = () => window.open(fileUrl, '_blank');  // Make the entire card clickable
-
+        newCard.onclick = () => window.open(fileUrl, '_blank');
         cardContainer.appendChild(newCard);
 
-        // Update Recent Activity Section
+        // Log Activity
         const newActivity = document.createElement('li');
         newActivity.textContent = `Added Study Material: ${materialTitle}`;
         recentActivityList.insertBefore(newActivity, recentActivityList.firstChild);
 
-        // Update chart with a random score (for demonstration)
-        const newScore = Math.floor(Math.random() * 100); // Random score between 0-100
-        updateChart(newScore);
-
-        // Increment ongoing courses
+        // Increment Ongoing Courses Count
         incrementOngoingCourses();
 
-        // Clear input fields
+        // Reset Input Fields
         newMaterialInput.value = '';
         fileInput.value = '';
     } else {
@@ -52,5 +47,42 @@ function addStudyMaterial() {
     }
 }
 
-// Event listener for adding new material
+// Event Listener for Adding Study Material
 addMaterialBtn.addEventListener('click', addStudyMaterial);
+
+// Toggle Chatbot Visibility
+chatIcon.addEventListener('click', () => {
+  chatbot.style.display = chatbot.style.display === 'none' || chatbot.style.display === '' ? 'flex' : 'none';
+});
+
+// Send Message in Chatbot
+function sendMessage() {
+    const chatInput = document.getElementById("chat-input-field");
+    const chatMessages = document.getElementById("chat-messages");
+
+    if (chatInput.value.trim() === "") return;
+
+    // Display User Message
+    const userMessage = document.createElement("div");
+    userMessage.className = "user-message";
+    userMessage.textContent = chatInput.value;
+    chatMessages.appendChild(userMessage);
+
+    // Send Message to Server
+    fetch("/chatbot", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ chat_text: chatInput.value })
+    })
+    .then(response => response.json())
+    .then(data => {
+        const botMessage = document.createElement("div");
+        botMessage.className = "bot-message";
+        botMessage.textContent = data.response || data.error;
+        chatMessages.appendChild(botMessage);
+        chatMessages.scrollTop = chatMessages.scrollHeight;  // Auto-scroll
+    })
+    .catch(error => console.error("Error:", error));
+
+    chatInput.value = "";  // Clear Input Field
+}
