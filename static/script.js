@@ -5,8 +5,6 @@ const newMaterialInput = document.getElementById('new-material');
 const fileInput = document.getElementById('file-upload');
 const recentActivityList = document.getElementById('recent-activity-list');
 
-
-
 // Element for updating the "Ongoing Courses" count
 const ongoingCoursesCount = document.querySelector('.stats .stat-box:nth-child(2) h3');
 
@@ -43,6 +41,9 @@ function addStudyMaterial() {
         const newScore = Math.floor(Math.random() * 100); // Random score between 0-100
         updateChart(newScore);
 
+        // Increment ongoing courses
+        incrementOngoingCourses();
+
         // Clear input fields
         newMaterialInput.value = '';
         fileInput.value = '';
@@ -50,8 +51,6 @@ function addStudyMaterial() {
         alert('Please provide a title and upload a PDF.');
     }
 }
-
-
 
 // Event listener for adding new material
 addMaterialBtn.addEventListener('click', addStudyMaterial);
