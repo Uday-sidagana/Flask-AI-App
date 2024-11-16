@@ -52,15 +52,7 @@ addMaterialBtn.addEventListener('click', addStudyMaterial);
 
 // Select chat icon and chatbot window
 
-// Toggle chatbot visibility when the chat icon is clicked
-chatIcon.addEventListener('click', () => {
-  // Toggle the display of the chatbot
-  if (chatbot.style.display === 'none' || chatbot.style.display === '') {
-    chatbot.style.display = 'block';
-  } else {
-    chatbot.style.display = 'none';
-  }
-});
+
 function toggleChat() {
   const chatbot = document.getElementById("chatbot");
   const icon = document.getElementById("chatbot-icon");
