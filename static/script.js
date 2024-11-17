@@ -59,7 +59,7 @@ function toggleChat() {
   if (chatbot.style.display === "none" || chatbot.classList.contains("close-animation")) {
       chatbot.classList.remove("close-animation");
       chatbot.classList.add("open-animation");
-      icon.style.transform = "rotate(360deg)";
+      
       setTimeout(() => {
           chatbot.style.display = "flex";
       }, 400);
